@@ -1,0 +1,7 @@
+tail:
+    cmd_dir: /var/run/aof_tail
+    aof_path: /usr/local/var/db/redis/appendonly.aof
+    offset_file: offset
+kafka:
+    host: 127.0.0.1
+    port: 1234

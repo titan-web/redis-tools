@@ -7,9 +7,9 @@ class Parser(object):
 
     def __init__(self):
         self.reader = hiredis.Reader()
+        self.reader.setmaxbuf(0)
 
     def parse_command(self, request):
-        self.reader.setmaxbuf(0)
         self.reader.feed(request)
         try:
             command = self.reader.gets()

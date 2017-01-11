@@ -12,13 +12,10 @@ def main():
 
     tailer = Pygtail(config.get('tail').get('aof_path'), "offset_file")
     parser = Parser()
-    request = ""
     for line in tailer:
-        request += line
         command = parser.parse_command(line)
         if not command:
             continue
-        request = ""
         print command
 
 if __name__ == "__main__":
